@@ -1,20 +1,21 @@
 import random
 from tkinter import Tk, Button, Label, Text, PhotoImage, TOP, BOTTOM
 
+# base gui initialization
 root = Tk()
 root.wm_title = "Rock Paper Scissors" #app title
 root.geometry("600x600") #window size
 
+# grabbing our images
 rock = PhotoImage(file="/Users/gervannastephens/Documents/GitHub/RockPaperScissors-with-Tkinter/RPS/rock-100x120.png")
 
-
 paper = PhotoImage(file="/Users/gervannastephens/Documents/GitHub/RockPaperScissors-with-Tkinter/RPS/paper-100x120.png")
-
 
 scissors = PhotoImage(file="/Users/gervannastephens/Documents/GitHub/RockPaperScissors-with-Tkinter/RPS/scissors-100x120.png")
 
 
 game_choices = [rock, paper, scissors]
+
 
 welcome = Label(root, padx=10, pady=10, fg='blue', font='Verdana 24 bold', text= "Welcome to Rock Paper Scissors.")
 welcome.pack()
@@ -26,16 +27,16 @@ Paper wins against rock.
 '''
 
 def pickedRock():
-    player = 0
-    runGame(player)
+    player_choice= 0
+    runGame(player_choice)
 
 def pickedPaper():
-    player = 1
-    runGame(player)
+    player_choice = 1
+    runGame(player_choice)
 
 def pickedScissors():
-    player = 2
-    runGame(player)
+    player_choice = 2
+    runGame(player_choice)
 
 rockButton = Button(root, font='Verdana 14 bold', text="rock", command=pickedRock)
 rockButton.pack()
@@ -46,7 +47,6 @@ paperButton.pack()
 scissorsButton = Button(root, font='Verdana 14 bold', text="scissors", command=pickedScissors)
 scissorsButton.pack()
 
-#rock_img = PhotoImage(file="/Users/gervannastephens/Documents/GitHub/RockPaperScissors-with-Tkinter/RPS/rock.png")
 player_choice_label = Label(root)
 player_choice_label.pack()
 
@@ -56,30 +56,78 @@ computer_choice_label.pack()
 statusLabel = Label(root)
 statusLabel.pack()
 
-def runGame(player):
+player_score_label = Label(root)
+player_score_label.pack()
 
-    player_choice_label.configure(text="You chose: ", image=game_choices[player], compound=BOTTOM)
+computer_score_label = Label(root)
+computer_score_label.pack()
 
-    #statusLabel.configure(text="") #clears after each play
+player_score = 0
+computer_score = 0
 
-    #statusLabel.configure("Player chose: ", (game_choices[player]))
-    #statusLabel.configure(image=game_choices[player])
+def resetGame():
+    global player_score
+    global computer_score
 
-    computer = random.randint(0, 2)
+    player_choice_label.configure(text="", image="")
+    computer_choice_label.configure(text="", image="")
+    statusLabel.configure(text="", image="")
+    player_score = 0
+    computer_score = 0
+    player_score_label.configure(text="")
+    computer_score_label.configure(text="")
 
-    computer_choice_label.configure(text="The computer chose: ", image=game_choices[computer], compound=BOTTOM)
+resetButton = Button(root, text="Reset", command=resetGame)
+resetButton.pack()
 
-    #statusLabel.configure("Computer chose: " + (game_choices[computer]))
+def exitGame():
+    root.destroy()
 
-    if player == computer:
+exitButton = Button(root, text="exit app", command=exitGame)
+exitButton.pack()
+
+
+def runGame(player_choice):
+
+    global player_score
+    global computer_score
+
+    player_choice_label.configure(text="You chose: ", image=game_choices[player_choice], compound=BOTTOM)
+
+    computer_choice = random.randint(0, 2)
+
+    computer_choice_label.configure(text="The computer chose: ", image=game_choices[computer_choice], compound=BOTTOM)
+
+    if player_choice == computer_choice:
         statusLabel.configure(text="\nIt's a draw.")
-    elif player == 0 and computer == 2:
-        statusLabel.configure(text="\nYou win!")
-    elif computer == 0 and player == 2:
+
+    elif player_choice == 0 and computer_choice == 2:
+        statusLabel.configure(text="\nYou win this round!")
+        player_score +=1
+
+    elif computer_choice == 0 and player_choice== 2:
         statusLabel.configure(text="\nYou lose...")
-    elif computer > player:
+        computer_score +=1
+
+    elif computer_choice > player_choice:
         statusLabel.configure(text="\nYou lose")
-    elif player > computer:
+        computer_score +=1
+
+    elif player_choice > computer_choice:
         statusLabel.configure(text="\nYou win")
+        player_score +=1
+
+    player_score_label.configure(text=f"Your score: {player_score}")
+    computer_score_label.configure(text=f"Computer's score: {computer_score}")
+
+    if player_score == 10:
+        statusLabel.configure(text="you won the whole thing!")
+        resetGame()
+    elif computer_score == 10:
+        statusLabel.configure(text="you lost to a robot.")
+        resetGame()
+
+    
+
 
 root.mainloop()
