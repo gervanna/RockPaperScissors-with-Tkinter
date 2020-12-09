@@ -4,7 +4,7 @@ from tkinter import Tk, Button, Label, PhotoImage, TOP, BOTTOM, Frame
 # base gui initialization
 root = Tk()
 root.wm_title = "Rock Paper Scissors" #app title
-root.geometry("600x600") #window size
+root.geometry("500x600") #window size
 root.grid_rowconfigure(0, weight=1)
 root.grid_columnconfigure(0, weight=1)
 
@@ -23,14 +23,15 @@ scissors = PhotoImage(file="/Users/gervannastephens/Documents/GitHub/RockPaperSc
 game_choices = [rock, paper, scissors]
 style_button = ('Verdana', 14, 'bold')
 
-welcome = Label(startPage, padx=10, pady=10, fg='blue', font='Verdana 24 bold', text= "Welcome to Rock Paper Scissors.")
-welcome.pack()
+welcome = Label(startPage, padx=20, pady=20, fg='blue', font='Verdana 24 bold', text= "Welcome to Rock Paper Scissors.")
+welcome.grid(row=0, column=0, columnspan=2, sticky='nsew')
+
 rules = '''The outcome of the game is determined by 3 simple rules:
-\n1 Rock wins against scissors.
+\n1. Rock wins against scissors.
 \n2. Scissors win against paper.
 \n3. Paper wins against rock.'''
 info = Label(startPage, font='Verdana 14', bg='#B0C4DE', text=rules)
-info.pack()
+info.grid(row=1, column=0, columnspan=2, pady=10, sticky='nsew')
 
 winLimit = 0
 
@@ -44,13 +45,11 @@ def multigameStreak():
     winLimit = 10
     gamePage.tkraise()
 
-
 single=Button(startPage, font=style_button, text="Single", command=singleStart)
-single.pack()
+single.grid(row=2, column=0, pady=50)
 
 streak=Button(startPage, font=style_button, text="Streak", command=multigameStreak)
-streak.pack()
-
+streak.grid(row=2, column=1, pady=50)
 
 def pickedRock():
     player_choice= 0
@@ -64,14 +63,17 @@ def pickedScissors():
     player_choice = 2
     runGame(player_choice)
 
+rps_label=Label(gamePage, font=style_button, text="Please choose one of the following:\n")
+rps_label.pack()
+
 rockButton = Button(gamePage, font=style_button, padx=2, pady=2, text="rock", command=pickedRock)
-rockButton.pack()
+rockButton.pack(pady=3)
 
-paperButton = Button(gamePage, font=style_button, text="paper", command=pickedPaper)
-paperButton.pack()
+paperButton = Button(gamePage, font=style_button, padx=2, pady=2, text="paper", command=pickedPaper)
+paperButton.pack(pady=3)
 
-scissorsButton = Button(gamePage, font=style_button, text="scissors", command=pickedScissors)
-scissorsButton.pack()
+scissorsButton = Button(gamePage, font=style_button, padx=2, pady=2, text="scissors", command=pickedScissors)
+scissorsButton.pack(pady=3)
 
 player_choice_label = Label(gamePage)
 player_choice_label.pack()
@@ -115,8 +117,8 @@ resetButton.pack()
 def exitGame():
     root.destroy()
 
-exitButton = Button(gamePage, font=style_button, text="Exit App", command=exitGame)
-exitButton.pack()
+exitButton = Button(root, font=style_button, text="Exit App", command=exitGame)
+exitButton.grid(row=1, column=0)
 
 def runGame(player_choice):
     global player_score
