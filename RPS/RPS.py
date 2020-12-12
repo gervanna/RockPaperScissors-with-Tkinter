@@ -1,10 +1,10 @@
 import random
-#
-from tkinter import Tk, Button, Label, PhotoImage, BOTTOM, Frame
+from tkinter import Tk, Button, Label, PhotoImage, BOTTOM, Frame 
+#I imported from tkinter as I would need the elements
 
 # base gui initialization
 root = Tk()
-root.wm_title = "Rock Paper Scissors" #app title
+root.title("Rock Paper Scissors") #app title
 root.geometry("600x600") #window size
 root.grid_rowconfigure(0, weight=1)
 root.grid_columnconfigure(0, weight=1)
@@ -14,7 +14,7 @@ startPage.grid(row=0, column=0, sticky="nsew")
 
 gamePage=Frame(root)
 gamePage.grid(row=0, column=0, sticky="nsew")
-startPage.tkraise() #function to stae which frame shows first
+startPage.tkraise() #function to state which frame shows first
 
 #grabbing images
 rock = PhotoImage(file="/Users/gervannastephens/Documents/GitHub/RockPaperScissors-with-Tkinter/RPS/rock-100x120.png")
