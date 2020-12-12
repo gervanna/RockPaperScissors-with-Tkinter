@@ -27,12 +27,10 @@ Initial Game Screen Single vs. Streak
 
 Single Game
 
-![RPS Single Game]
-(https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20SingleGame.png)
+![RPS Single Game](https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20SingleGame.png)
 
 Streak Game
 
-![RPS Streak Game]
-(https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20StreakGame.png)
+![RPS Streak Game](https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20StreakGame.png)
 
 **status - COMPLETE** - 12/8/20
