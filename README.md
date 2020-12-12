@@ -13,23 +13,23 @@ Choosing 'single', runs the RPS game till player or computer score 1pt, then the
 
 Choosing 'streak', is similar to choosing single, except the RPS game runs till the player or computer scores 10pts, before the buttons get disabled/enabled.
 
-There's an exit button present on all pages as well. I wanted to use a gif of like an explosion for when the exit was clicked, but I haven't figured that out yet.
+There's an exit button present on all pages as well. I wanted to use a gif of like an explosion for when the exit was clicked, but I haven't figured that out.
 
 ## Screenshots
 
-Start Page
+**Start Page**
 
-![RPS Start Page](https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20StartPage.png&s=200)
+![RPS Start Page](https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20StartPage.png)
 
-Initial Game Screen Single vs. Streak
+**Initial Game Screen Single vs. Streak**
 
 ![RPS Initial Game Screen](https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20InitialGameScreen.png)
 
-Single Game
+**Single Game**
 
 ![RPS Single Game](https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20SingleGame.png)
 
-Streak Game
+**Streak Game**
 
 ![RPS Streak Game](https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20StreakGame.png)
 
