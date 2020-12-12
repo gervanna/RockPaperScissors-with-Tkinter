@@ -19,7 +19,7 @@ There's an exit button present on all pages as well. I wanted to use a gif of li
 
 Start Page
 
-![RPS Start Page](https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20StartPage.png)
+![RPS Start Page](https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20StartPage.png/s=200)
 
 Initial Game Screen Single vs. Streak
 
