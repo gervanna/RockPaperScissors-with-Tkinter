@@ -17,6 +17,10 @@ There's an exit button present on all pages as well. I wanted to use a gif of li
 
 ## Screenshots
 
+Start Page
+
+![RPS Start Page](https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20StartPage.png)
+
 
 
 **status - COMPLETE** - 12/8/20
