@@ -21,6 +21,18 @@ Start Page
 
 ![RPS Start Page](https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20StartPage.png)
 
+Initial Game Screen Single vs. Streak
 
+![RPS Initial Game Screen](https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20InitialGameScreen.png)
+
+Single Game
+
+![RPS Single Game]
+(https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20SingleGame.png)
+
+Streak Game
+
+![RPS Streak Game]
+(https://github.com/gervanna/RockPaperScissors-with-Tkinter/blob/main/Screenshots/RPS%20StreakGame.png)
 
 **status - COMPLETE** - 12/8/20
